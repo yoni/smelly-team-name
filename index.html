@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Org Smell Team Name Generator</title>
+    <link href='http://fonts.googleapis.com/css?family=Gravitas+One' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+      body {
+        background-color: 69C8F8;
+      }
+      #team-name {
+        font-size: 40px;
+        color: 0088CE;
+        font-family: 'Gravitas One', cursive;
+      }
+      button {
+        font-family: 'Gravitas One', cursive;
+        background-color: FF5800;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id='generate' onclick='generateTeamName()'>Click to generate a smelly team name</button>
+
+    <p id='team-name'></p>
+    <script type="text/javascript">
+      function shuffle(o) {
+        for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+        return o;
+      }
+
+      var words = [
+        'platform',
+        'data',
+        'operations',
+        'implementation',
+        'integration',
+        'manager',
+        'user',
+        'marketing',
+        'product',
+        'web',
+        'experience',
+        'systems'
+      ];
+
+    function generateTeamName() {
+      var shuffledWords = shuffle(words);
+      var randomCombination = [shuffledWords[0], shuffledWords[1]];
+      document.getElementById('team-name').innerHTML = randomCombination.join(' ');
+    }
+  </script>
+</body>
+</html>
+
